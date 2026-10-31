@@ -1,47 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-garden-canvas: #f5f4e9;
+  --color-garden-surface: #fffdf5;
+  --color-garden-forest: #284d3b;
+  --color-garden-leaf: #527452;
+  --color-garden-sage: #dce7d3;
+  --color-garden-cream: #f6f1df;
+  --color-garden-clay: #b66e4f;
+  --color-garden-ink: #263b2d;
+}
+
 :root {
   color-scheme: light;
 }
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
-  background: #f7f9f5;
-  color: #284536;
+  background: var(--color-garden-canvas);
+  color: var(--color-garden-ink);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 main {
-  min-height: 100vh;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: min(22vh, 180px) 32px 64px;
-}
-.mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: #326549;
-  color: #fff;
-  font-size: 30px;
-}
-.eyebrow {
-  margin: 48px 0 12px;
-  color: #688b70;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-h1 {
-  margin: 0 0 12px;
-  font-family: Georgia, serif;
-  font-size: clamp(42px, 7vw, 68px);
-  font-weight: 400;
-  letter-spacing: -2px;
-}
-.intro {
-  color: #758a7a;
-  font-size: 16px;
-  line-height: 1.6;
+  padding: min(22vh, 40px) 32px 64px;
 }
