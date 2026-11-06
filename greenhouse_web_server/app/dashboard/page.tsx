@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const OFFLINE_THRESHOLD_MS = 2 * 60 * 1000;
+const OFFLINE_THRESHOLD_MS = 3 * 60 * 1000;
 
 const DEVICE_ID = "greenhouse_board_1";
 
@@ -52,11 +52,16 @@ export default function Dashboard() {
     );
   }
 
+  const time = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  }).format(lastHeartbeat?.getDate());
   return (
     <div className="flex flex-row gap-4 items-baseline">
       <p className="text-3xl">Dashboard</p>
       <p>Status: {isOnline ? "Online" : "offline"} </p>
-      <p>Last Heartbeat: {lastHeartbeat?.getTime()}</p>
+      <p>Last Heartbeat: {time}</p>
     </div>
   );
 }

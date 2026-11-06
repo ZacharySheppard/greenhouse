@@ -2,3 +2,5 @@ CompileFlags:
     CompilationDatabase: build
     Remove: [-m*, -f*]
     BuiltinHeaders: QueryDriver
+Diagnostics:
+    Suppress: [-Wc23-extensions]

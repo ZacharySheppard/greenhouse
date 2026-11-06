@@ -1,10 +1,9 @@
+#pragma once
 
-
-class Device
-{
+class Device {
 public:
-    Device() noexcept;
-    ~Device();
+  Device() noexcept;
+  ~Device();
 
-    auto run() const -> void;
+  auto run() const -> void;
 };
