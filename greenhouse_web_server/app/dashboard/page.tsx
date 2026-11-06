@@ -40,7 +40,8 @@ export default function Dashboard() {
     };
 
     checkDeviceStatus();
-    const interval = setInterval(checkDeviceStatus, 5000);
+    const interval_ms = 30 * 1000;
+    const interval = setInterval(checkDeviceStatus, interval_ms);
     return () => clearInterval(interval);
   }, []);
 
@@ -52,11 +53,14 @@ export default function Dashboard() {
     );
   }
 
-  const time = new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  }).format(lastHeartbeat?.getDate());
+  const time =
+    lastHeartbeat &&
+    new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    }).format(lastHeartbeat);
+
   return (
     <div className="flex flex-row gap-4 items-baseline">
       <p className="text-3xl">Dashboard</p>
